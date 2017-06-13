@@ -3,13 +3,13 @@ var data;
 
 // Initialize Firebase
 var config = {
-  apiKey: "AIzaSyCIzjIx6J1hTAlg0AEZT4WKxQhmdlnq-L4",
-  authDomain: "santos-digital-demos.firebaseapp.com",
-  databaseURL: "https://santos-digital-demos.firebaseio.com",
-  projectId: "santos-digital-demos",
-  storageBucket: "santos-digital-demos.appspot.com",
-  messagingSenderId: "387503652832"
-};
+    apiKey: "AIzaSyATLmDD0PHqWqw-rCYvro-wrZ_YT9d5rSI",
+    authDomain: "santo-digital-demos.firebaseapp.com",
+    databaseURL: "https://santo-digital-demos.firebaseio.com",
+    projectId: "santo-digital-demos",
+    storageBucket: "santo-digital-demos.appspot.com",
+    messagingSenderId: "1014988731530"
+  };
 
 firebase.initializeApp(config);
 
@@ -19,7 +19,7 @@ dbRef = firebase.database().ref().child("notifications");
 function send() {
   var now = new Date();
   var id = now.getTime();
-  var urlAvatar = 'https://pbs.twimg.com/profile_images/831958905987010560/0pKEhzWj_400x400.jpg';
+  var urlAvatar = 'https://raw.githubusercontent.com/AlvarDev/SantosNotificationDemoWeb/master/ic_logo.png';
   var mTitle = $('#typed-title').val();;
   var mMessage = $('#typed-message').val();
 
@@ -55,7 +55,7 @@ function sendNotification(mTitle, mMessage) {
     dataType: "json",
     beforeSend: function(request) {
       request.setRequestHeader("Content-Type", "application/json");
-      request.setRequestHeader("Authorization", "key=AAAAWjkEf-A:APA91bGoIMgKi2FZAT1G19YJOaxdY5UsRuK0bqK99Np0shPaY-TGPGlePTbz9A8jUycGSTY-hxu4xwYUiMKbfDIIs9LOu8TJ0d2pGKz48E-WCrBd7le8PC03up0bKarSQBdRfA3P1c7L");
+      request.setRequestHeader("Authorization", "key=AAAA7FIK9Io:APA91bG4wC2X0bY9W4UoDPgogu0SS4qaCVumopPl5pVaxfMOvsGlC0JU6OPxE3_G1AeZMu9Y2HF5o38oJOJSALlH1rTBmgmnkkvVDaWOlDwtA4eBnh7ZSBBuGBWFAIDFXLE-e42SZdrD");
     },
     success: function(response) {
       alert("Message Sent");
