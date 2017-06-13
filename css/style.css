@@ -1,0 +1,44 @@
+*{
+font-family: 'Roboto', sans-serif;
+}
+
+.title-h1{
+    color: #1e384d;
+    margin: 10px;
+}
+
+.remove{
+  color: #0aa667;
+  margin: 10px;
+}
+
+.row{
+  width: 60%;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin: 20px 10px 20px 10px;
+  padding: 10px;
+  /*box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);*/
+
+}
+
+.user-avatar{
+  width: 70px;
+  height: 70px;
+  border: 50%;
+  margin-right: 20px;
+}
+
+.user-avatar, .info{
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.title{
+  color: #0aa667;
+  font-weight: bold;
+}
+
+.message{
+  color: #929292;
+}

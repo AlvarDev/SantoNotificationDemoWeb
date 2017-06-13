@@ -3,23 +3,23 @@ var data;
 
 // Initialize Firebase
 var config = {
-    apiKey: "AIzaSyATLmDD0PHqWqw-rCYvro-wrZ_YT9d5rSI",
-    authDomain: "santo-digital-demos.firebaseapp.com",
-    databaseURL: "https://santo-digital-demos.firebaseio.com",
-    projectId: "santo-digital-demos",
-    storageBucket: "santo-digital-demos.appspot.com",
-    messagingSenderId: "1014988731530"
-  };
+  apiKey: "AIzaSyATLmDD0PHqWqw-rCYvro-wrZ_YT9d5rSI",
+  authDomain: "santo-digital-demos.firebaseapp.com",
+  databaseURL: "https://santo-digital-demos.firebaseio.com",
+  projectId: "santo-digital-demos",
+  storageBucket: "santo-digital-demos.appspot.com",
+  messagingSenderId: "1014988731530"
+};
 
 firebase.initializeApp(config);
 
 dbRef = firebase.database().ref().child("notifications");
-//dbRef.on('value', snap => setMessages(snap.val()));
+dbRef.on('value', snap => setNotificationsList(snap.val()));
 
 function send() {
   var now = new Date();
   var id = now.getTime();
-  var urlAvatar = 'https://raw.githubusercontent.com/AlvarDev/SantosNotificationDemoWeb/master/ic_logo.png';
+  var urlAvatar = 'https://raw.githubusercontent.com/AlvarDev/SantoNotificationDemoWeb/master/img/ic_logo.png';
   var mTitle = $('#typed-title').val();;
   var mMessage = $('#typed-message').val();
 
@@ -67,5 +67,25 @@ function sendNotification(mTitle, mMessage) {
     }
   });
 
+
+}
+
+function setNotificationsList(notifications) {
+
+  $(".row").remove();
+  $(".remove").remove();
+  var html = "";
+
+  $.each(notifications, function(i, notification) {
+    html += '<article class="row">';
+    html += '<img class="user-avatar" src="' + notification.urlAvatar + '"/>';
+    html += '<div class="info">';
+    html += '<div class="title">' + notification.title + '</div>';
+    html += '<div class="message">' + notification.message + '</div>';
+    html += '</div>';
+    html += '</article>';
+  });
+
+  $("#rows").append(html);
 
 }
